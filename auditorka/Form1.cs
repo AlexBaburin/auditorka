@@ -27,7 +27,7 @@ namespace auditorka
         {
             InitializeComponent();
             if (!File.Exists("saves.txt"))
-                File.Create("saves.txt");
+                File.WriteAllLines("saves.txt", new string[0]);
             savedActions = File.ReadAllText("saves.txt");
             if (savedActions.Length > 0)
                 label12.Text = label12.Text + "\n" + savedActions;
